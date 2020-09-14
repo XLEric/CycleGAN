@@ -12,7 +12,7 @@ Example:
     Train a CycleGAN model:
         python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
         python train.py --dataroot ./download/horse2zebra --name horse2zebra_cyclegan --model cycle_gan --continue_train True
-        python train.py --dataroot ./cartoon/cartoon1 --name cartoon1_cyclegan --model cycle_gan
+        python train.py --dataroot ./train_datasets/photo2cezanne --name cezanne_cyclegan --model cycle_gan
     Train a pix2pix model:
         python train.py --dataroot ./datasets/facades --name facades_pix2pix --model pix2pix --direction BtoA
 

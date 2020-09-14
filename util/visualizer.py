@@ -80,6 +80,7 @@ def display_results(opt,visuals, epoch, save_result):
             # cv2.imshow('img',images[0])
             stack_n = None
             # print('-------->> begin')
+            idx_p = 0
             for i in range(len(images)):
 
                 img_ = cv2.cvtColor(images[i].transpose([1, 2, 0]),cv2.COLOR_RGB2BGR)
@@ -93,10 +94,18 @@ def display_results(opt,visuals, epoch, save_result):
                 if (i+1)%(ncols)==0:
                     # print('-------->>ss')
                     # print('stack_n shap : ',stack_n.shape)
-                    cv2.namedWindow('img_' + str(int((i+1)/(ncols))),0)
-                    cv2.imshow('img_' + str(int((i+1)/(ncols))),stack_n)
-                    cv2.waitKey(1)
+                    # cv2.namedWindow('img_' + str(int((i+1)/(ncols))),0)
+                    # cv2.imshow('img_' + str(int((i+1)/(ncols))),stack_n)
+                    # cv2.waitKey(1)
+                    idx_p += 1
+                    if idx_p == 1:
+                        cv2.imwrite('./result/A.jpg',stack_n)
+                    else:
+                        cv2.imwrite('./result/B.jpg',stack_n)
+
                     stack_n = None
+
+
 
 
 
